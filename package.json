@@ -1,0 +1,19 @@
+{
+  "name": "Projeto-Integrador-V-Frontend",
+  "version": "0.0.1",
+  "description": "Projeto Integrador V - Grupo Homo Sapiens",
+  "author": "Rael Souza",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.1.3"
+  }
+}
