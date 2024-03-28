@@ -1,17 +1,25 @@
 import React from "react";
 import styles from "../styles.module.css";
-import forg from "./forget.module.css";
+import forgetStyles from "./forget.module.css";
 
-export default function Forget(){
-    return(
-        <div className={styles.DarkScreen}>
-            <div className={forg.Screen}>
-                <h1 className={styles.title}>Esqueci a senha</h1>
-                <div className={styles.DarkDiv}>
-                    <input className={styles.text} type="text" id="email" placeholder="E-mail"></input>
-                    <button className={styles.DarkButton}> Continuar</button>
-                </div>
-            </div>
+export default function Forget() {
+  return (
+    <div className={styles.container}>
+      <div className={forgetStyles.forgetContainer}>
+        <h1 className={styles.title}>Esqueci minha senha</h1>
+        <div>
+          <div className={forgetStyles.form}>
+            <input
+              type="email"
+              placeholder="Insira seu e-mail"
+              className={`${styles.input} ${styles.lightInput} ${forgetStyles.input}`}
+            />
+            <button className={`${styles.darkButton} ${forgetStyles.button}`}>
+              Enviar código
+            </button>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }

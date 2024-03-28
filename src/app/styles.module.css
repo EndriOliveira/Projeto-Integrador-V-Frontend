@@ -1,67 +1,52 @@
-
-.text{
+.input {
     height: 30px;
     background-color: transparent;
-    width: 80%;
+    width: 100%;
     margin-top: 30px;
-    border-bottom: 5px solid #808080;
+    font-size: 16px;
+    border-bottom: .5px solid var(--gray-color);
     border-top: none;
     border-left: none;
     border-right: none;
-    color: white;
     outline: none;
 }
 
-.Screen{
-    background-color: #FF9B71;
-    width: 100%;
-    height: 95vh;
-    display:flex;
+.lightInput {
+    border-bottom-color: var(--white-color);
 }
 
-.DarkScreen{
-    background-color: #363636;
-    width: 100%;
-    height: 95vh;
-    display:flex; 
+.lightInput::placeholder {
+    color: var(--white-color);
 }
 
-
-.button{
-    height: 30px;
-    width: 230px;
-    margin-top: 30px;
-    font-style:normal;
-    font-size: 16px;
-    background-color: #FF9B71;
+.button {
+    width: fit-content;
+    padding: 20px 50px;
+    background-color: var(--secondary-color);
     border-radius: 15px;
     border: none;
 }
 
-.title{
+.title {
     font-size: 75px;
-    color: white;
 }
 
-.DarkDiv{
-    background-color: #FF9B71;
-    width:65vh;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-.DarkButton{
-    height: 30px;
-    width: 230px;
-    margin-top: 30px;
-    font-style:normal;
-    font-size: 16px;
-    background-color: #363636;
+.darkButton {
+    width: fit-content;
+    padding: 20px 50px;
+    background-color: var(--primary-color);
     border-radius: 15px;
     border: none;
-    color: white;
+}
 
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+@media screen and (max-width: 1280px) {
+    .title {
+        font-size: 60px;
+    }
 }

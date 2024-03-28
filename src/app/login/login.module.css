@@ -1,17 +1,49 @@
-
-.allright{
-    text-align: center;
-    width: 40%;
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #363636;
-    color: white;
-    height: 100%;
-    justify-content: center space-between;
-}
-.imgs{
+.logo {
+    height: 100vh;
     width: 60%;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
+.logo img {
+    width: 35%;
+    height: fit-content;
+}
+
+@media screen and (max-width: 1024px) {
+    .logo {
+        display: none;
+    }
+
+    .loginContainer {
+        width: 100% !important;
+    }
+}
+
+.loginContainer {
+    height: 100vh;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginForm {
+    height: 60vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.button {
+    font-size: 22px;
+}
+
+.forgotPassword {
+    float: right;
+    margin-top: 10px;
+}
