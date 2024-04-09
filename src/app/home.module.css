@@ -1,0 +1,72 @@
+.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.firstRow {
+  border-right: 1px solid var(--white-color);
+  justify-content: space-evenly;
+}
+
+.firstRow button {
+  font-size: 30px;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.secondRow {
+  border-left: 1px solid var(--white-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;
+  }
+
+  .row {
+    width: 90%;
+    height: 80vh;
+  }
+
+  .firstRow {
+    border-right: none;
+    border-bottom: 1px solid var(--white-color);
+  }
+
+  .secondRow {
+    border-left: none;
+    border-top: 1px solid var(--white-color);
+  }
+
+  .firstRow button {
+    font-size: 20px;
+  }
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.appointments ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style: circle;
+}

@@ -25,6 +25,13 @@
     background-color: var(--secondary-color);
     border-radius: 15px;
     border: none;
+    transition: .3s;
+}
+
+.button:hover {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    transition: .3s;
 }
 
 .title {
@@ -37,12 +44,27 @@
     background-color: var(--primary-color);
     border-radius: 15px;
     border: none;
+    transition: .3s;
+}
+
+.darkButton:hover {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    transition: .3s;
 }
 
 .container {
     display: flex;
-    height: 100vh;
-    width: 100%;
+    flex: 1;
+    padding: 10px 1%;
+}
+
+.card {
+    flex: 1;
+    background-color: var(--tertiary-color);
+    margin: 10px 15px;
+    border-radius: 15px;
+    padding: 10px 1%;
 }
 
 @media screen and (max-width: 1280px) {
