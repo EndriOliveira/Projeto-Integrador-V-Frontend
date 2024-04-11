@@ -1,7 +1,9 @@
 "use client";
+import dayjs from "dayjs";
 import React, { useEffect } from "react";
 import { api } from "../api/api";
 import Header from "../components/header";
+import { User } from "../interfaces/User";
 import makeToast from "../shared/toaster";
 import homeStyles from "./home.module.css";
 import styles from "./styles.module.css";
@@ -66,48 +68,31 @@ export default function Home() {
                 <li>
                   Entrada:{" "}
                   {user?.schedule?.entry
-                    ? new Date(user?.schedule?.entry).toLocaleTimeString(
-                        "pt-BR",
-                        {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        }
-                      )
+                    ? dayjs(user?.schedule?.entry)
+                        .add(3, "hour")
+                        .format("HH:mm")
                     : ""}
                 </li>
                 <li>
                   Pausa/Almoço:{" "}
                   {user?.schedule?.intervalEntry
-                    ? new Date(
-                        user?.schedule?.intervalEntry
-                      ).toLocaleTimeString("pt-BR", {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })
+                    ? dayjs(user?.schedule?.intervalEntry)
+                        .add(3, "hour")
+                        .format("HH:mm")
                     : ""}
                 </li>
                 <li>
                   Retorno Pausa:{" "}
                   {user?.schedule?.intervalExit
-                    ? new Date(user?.schedule?.intervalExit).toLocaleTimeString(
-                        "pt-BR",
-                        {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        }
-                      )
+                    ? dayjs(user?.schedule?.intervalExit)
+                        .add(3, "hour")
+                        .format("HH:mm")
                     : ""}
                 </li>
                 <li>
                   Saída:{" "}
                   {user?.schedule?.exit
-                    ? new Date(user?.schedule?.exit).toLocaleTimeString(
-                        "pt-BR",
-                        {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        }
-                      )
+                    ? dayjs(user?.schedule?.exit).add(3, "hour").format("HH:mm")
                     : ""}
                 </li>
               </ul>

@@ -60,11 +60,20 @@
 }
 
 .card {
+    display: flex;
     flex: 1;
     background-color: var(--tertiary-color);
     margin: 10px 15px;
     border-radius: 15px;
     padding: 10px 1%;
+}
+
+.positive {
+    color: var(--positive-color);
+}
+
+.negative {
+    color: var(--negative-color);
 }
 
 @media screen and (max-width: 1280px) {

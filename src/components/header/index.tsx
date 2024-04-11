@@ -7,6 +7,7 @@ import logout from "../../assets/img/icons/logout.png";
 import profile from "../../assets/img/icons/profile.png";
 import users from "../../assets/img/icons/users.png";
 import logo from "../../assets/img/logo.png";
+import { User } from "../../interfaces/User";
 import { redirect } from "../../shared/redirect";
 import makeToast from "../../shared/toaster";
 import headerStyles from "./header.module.css";

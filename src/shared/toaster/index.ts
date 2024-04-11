@@ -3,7 +3,8 @@ import SweetAlert from "sweetalert2";
 const Toast = SweetAlert.mixin({
   toast: true,
   position: "bottom-start",
-  background: "var(--white-color)",
+  background: "var(--primary-color)",
+  color: "var(--white-color)",
   showConfirmButton: false,
   timer: 1500,
   timerProgressBar: true,

@@ -1,4 +1,4 @@
-type Schedule = {
+export type Schedule = {
   id: string;
   entry: Date;
   intervalEntry: Date;
@@ -8,7 +8,7 @@ type Schedule = {
   updatedAt: Date;
 };
 
-type User = {
+export type User = {
   id: string;
   name: string;
   email: string;
