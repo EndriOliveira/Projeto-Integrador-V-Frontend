@@ -33,7 +33,7 @@ $ npm install
 
 ## Executando a aplicação
 
-Após criação de um arquivo de variáveis de ambiente (.env):
+Após criação de um arquivo de variáveis de ambiente (.env.local):
 
 ```bash
 # Desenvolvimento
