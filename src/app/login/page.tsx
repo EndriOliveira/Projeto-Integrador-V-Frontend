@@ -130,7 +130,7 @@ export default function Login() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${loginStyles.container}`}>
       <div className={loginStyles.logo}>
         <Image src={logo} alt="Logo" />
       </div>
