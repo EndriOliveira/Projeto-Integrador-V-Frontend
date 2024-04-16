@@ -1,0 +1,148 @@
+.container {
+  flex-direction: column;
+  flex: 0;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.orderCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: var(--tertiary-color);
+  align-self: flex-end;
+  padding: 15px 30px;
+}
+
+.order {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.order select {
+  background-color: var(--tertiary-color);
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+.table,
+.tableContainer {
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tableHeader {
+  margin-bottom: 20px;
+}
+
+.tableHeader .headerRow {
+  display: flex;
+}
+
+.headerRow p {
+  min-width: 160px;
+  width: calc(100% / 6);
+  text-align: center;
+  font-weight: 300;
+  border-bottom: 2px solid var(--gray-color);
+  color: var(--gray-color);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 0 0 0;
+  width: 100%;
+  border-bottom: .5px solid var(--gray-color);
+}
+
+.row p,
+.row div {
+  min-width: 160px;
+  width: calc(100% / 6);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buttonGroup button,
+.buttonGroup a {
+  background-color: transparent;
+  margin: 0;
+  border: none;
+}
+
+.buttonGroup img {
+  width: 25px;
+  height: 25px;
+}
+
+.pagination {
+  padding: 0 15px;
+  margin: 0 0 0 auto;
+}
+
+.pages {
+  background-color: var(--tertiary-color);
+  padding: 10px 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.pages button {
+  background-color: transparent;
+  margin: 0;
+  border: none;
+  font-size: 16px;
+}
+
+.currentPage {
+  color: var(--secondary-color);
+}
+
+.card {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .orderCol {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .searchContainer {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .row {
+    border: none;
+  }
+}

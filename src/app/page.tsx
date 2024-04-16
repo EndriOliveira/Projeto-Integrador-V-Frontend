@@ -26,8 +26,23 @@ export default function Home() {
         makeToast("success", "Ponto registrado com sucesso!");
         window.location.reload();
       })
-      .catch(() => {
-        makeToast("error", "Erro ao registrar ponto, tente novamente.");
+      .catch((error) => {
+        if (
+          error.response.data.message &&
+          typeof error.response.data.message === "object"
+        ) {
+          makeToast(
+            "error",
+            `${error.response.data.message[0].path[0]} : ${error.response.data.message[0].message}`
+          );
+        } else if (
+          error.response.data.message &&
+          typeof error.response.data.message === "string"
+        ) {
+          makeToast("error", error.response.data.message);
+        } else {
+          makeToast("error", "Erro ao registrar ponto, tente novamente.");
+        }
       });
   };
 

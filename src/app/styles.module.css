@@ -38,6 +38,11 @@
     font-size: 75px;
 }
 
+.subtitle {
+    font-size: 40px;
+    color: var(--gray-color);
+}
+
 .darkButton {
     width: fit-content;
     padding: 20px 50px;

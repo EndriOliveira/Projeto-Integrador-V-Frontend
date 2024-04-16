@@ -123,7 +123,7 @@ export default function Header() {
             <Image src={users} alt="Lista de usuários" />
           </a>
         )}
-        <a href="/history">
+        <a href={user && `/history/${user.id}`}>
           <Image src={history} alt="Histórico de apontamentos" />
         </a>
         <a href="/profile">
