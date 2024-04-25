@@ -81,6 +81,28 @@
     color: var(--negative-color);
 }
 
+.modal {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color);
+    justify-content: center;
+    align-items: center;
+}
+
+.modalCard {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    padding: 30px 1%;
+    border-radius: 15px;
+    background-color: var(--gray-color)
+}
+
 @media screen and (max-width: 1280px) {
     .title {
         font-size: 60px;

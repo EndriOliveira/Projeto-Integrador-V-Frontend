@@ -5,36 +5,14 @@
 
 .searchContainer {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  width: 35%;
   margin-bottom: 10px;
-}
-
-.orderCol {
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
 }
 
-.button {
-  background-color: var(--tertiary-color);
-  align-self: flex-end;
-  padding: 15px 30px;
-}
-
-.order {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.order select {
-  background-color: var(--tertiary-color);
-  border: none;
-  border-radius: 15px;
-  padding: 10px 25px;
-  cursor: pointer;
+.name {
+  color: var(--secondary-color);
 }
 
 .table,
@@ -55,11 +33,15 @@
 
 .headerRow p {
   min-width: 160px;
-  width: calc(100% / 6);
+  width: calc(100% / 5);
   text-align: center;
   font-weight: 300;
   border-bottom: 2px solid var(--gray-color);
   color: var(--gray-color);
+}
+
+.headerRowSimple p {
+  width: calc(100% / 4);
 }
 
 .list {
@@ -80,10 +62,15 @@
 .row p,
 .row div {
   min-width: 160px;
-  width: calc(100% / 6);
+  width: calc(100% / 5);
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.rowSimple p,
+.rowSimple div {
+  width: calc(100% / 4);
 }
 
 .buttonGroup button,
@@ -98,34 +85,17 @@
   height: 25px;
 }
 
-.pagination {
-  padding: 0 15px;
-  margin: 0 0 0 auto;
-}
-
-.pages {
-  background-color: var(--tertiary-color);
-  padding: 10px 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  display: flex;
-  gap: 15px;
-}
-
-.pages button {
-  background-color: transparent;
-  margin: 0;
-  border: none;
-  font-size: 16px;
-}
-
-.currentPage {
-  color: var(--secondary-color);
-}
-
 .card {
   margin-bottom: 0;
   border-bottom-right-radius: 0;
+}
+
+.editModalCard div {
+  flex-direction: column;
+}
+
+.editButtonGroup {
+  display: flex;
 }
 
 .modalCard {
@@ -141,9 +111,30 @@
   gap: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  .orderCol {
-    gap: 30px;
+.editInputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.editInputGroup div>input {
+  width: fit-content;
+  border-radius: 15px;
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--primary-color);
+}
+
+.inputRow {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 425px) {
+  .searchContainer {
+    width: 70%;
   }
 }
 

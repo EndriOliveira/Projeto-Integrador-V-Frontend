@@ -1,12 +1,4 @@
-export type Schedule = {
-  id: string;
-  entry: Date;
-  intervalEntry: Date;
-  intervalExit: Date;
-  exit: Date;
-  createdAt: Date;
-  updatedAt: Date;
-};
+import { Schedule } from "./Schedule";
 
 export type User = {
   id: string;

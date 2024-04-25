@@ -105,17 +105,19 @@ export default function Profile() {
                 )}
               </p>
               <p>Departamento: {user?.department}</p>
-              <p>
-                Banco de horas: {user?.hourBalance.toString().replace("-", "")}{" "}
-                minutos{" "}
-                <span
-                  className={
-                    user?.hourBalance < 0 ? styles.negative : styles.positive
-                  }
-                >
-                  {user?.hourBalance < 0 ? "negativos" : "positivos"}
-                </span>
-              </p>
+              {user?.hourBalance !== 0 && (
+                <p>
+                  Banco de horas:{" "}
+                  {user?.hourBalance.toString().replace("-", "")} minutos{" "}
+                  <span
+                    className={
+                      user?.hourBalance < 0 ? styles.negative : styles.positive
+                    }
+                  >
+                    {user?.hourBalance < 0 ? "negativos" : "positivos"}
+                  </span>
+                </p>
+              )}
             </div>
             <div className={`${profileStyles.row} ${profileStyles.secondRow}`}>
               <h2 className={`${styles.title} ${profileStyles.title}`}>

@@ -15,6 +15,8 @@ import usersStyles from "./users.module.css";
 export default function Users() {
   const [user, setUser] = React.useState<User>(null);
   const [users, setUsers] = React.useState<User[]>([]);
+  const [userId, setUserId] = React.useState<string>(null);
+  const [showDeleteModal, setShowDeleteModal] = React.useState<boolean>(false);
 
   const [pages, setPages] = React.useState(0);
   const [page, setPage] = React.useState(1);
@@ -43,6 +45,54 @@ export default function Users() {
       sortBy: sortBy,
       sortType: sortType,
     });
+  };
+
+  const handleDeleteModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setUserId(e.currentTarget.value);
+    setShowDeleteModal(true);
+  };
+
+  const handleCancel = () => {
+    setUserId(null);
+    setShowDeleteModal(false);
+  };
+
+  const handleDelete = () => {
+    api
+      .delete(`/user/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("DT_Access_Token")}`,
+        },
+      })
+      .then(() => {
+        makeToast("success", "Usuário deletado com sucesso!");
+        handleCancel();
+        getUsers({
+          page: page,
+          limit: limit,
+          search: search,
+          sortBy: sortBy,
+          sortType: sortType,
+        });
+      })
+      .catch((error) => {
+        if (
+          error.response.data.message &&
+          typeof error.response.data.message === "object"
+        ) {
+          makeToast(
+            "error",
+            `${error.response.data.message[0].path[0]} : ${error.response.data.message[0].message}`
+          );
+        } else if (
+          error.response.data.message &&
+          typeof error.response.data.message === "string"
+        ) {
+          makeToast("error", error.response.data.message);
+        } else {
+          makeToast("error", "Erro ao deletar usuário!");
+        }
+      });
   };
 
   const getUsers = (
@@ -97,6 +147,22 @@ export default function Users() {
 
   return (
     <>
+      {showDeleteModal && (
+        <div className={styles.modal}>
+          <div className={`${styles.modalCard} ${usersStyles.modalCard}`}>
+            <h2>Deletar Funcionário?</h2>
+            <div>
+              <button className={styles.darkButton} onClick={handleCancel}>
+                Cancelar
+              </button>
+              <button className={styles.button} onClick={handleDelete}>
+                Deletar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Header />
       <div className={`${styles.container} ${usersStyles.container}`}>
         <div className={usersStyles.searchContainer}>
@@ -200,7 +266,7 @@ export default function Users() {
                       <a href={`/edit/${user.id}`}>
                         <Image src={edit} alt="Editar Usuário" />
                       </a>
-                      <button>
+                      <button value={user.id} onClick={handleDeleteModal}>
                         <Image src={deleteUser} alt="Deletar Usuário" />
                       </button>
                       <a href={`/history/${user.id}`}>

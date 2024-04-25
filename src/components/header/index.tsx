@@ -106,8 +106,9 @@ export default function Header() {
       localStorage.removeItem("DT_Refresh_Token");
       localStorage.removeItem("DT_User");
       redirect("/login");
+    } else {
+      validateAccessToken();
     }
-    validateAccessToken();
   }, []);
 
   return (
