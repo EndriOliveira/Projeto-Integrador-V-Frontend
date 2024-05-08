@@ -10,7 +10,7 @@
 
   <p align="center">Projeto Integrador: Análise de Soluções de Tecnologia da Informação</p>
   
-## Turma - 5 NC 5S20222 
+## Turma - 5 NC 5S2022 
 
 ## Integrantes
 
