@@ -1,3 +1,5 @@
 export const redirect = (path: string) => {
-  window.location.href = path;
+  setTimeout(() => {
+    window.location.href = path;
+  }, 1500);
 };

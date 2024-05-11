@@ -19,7 +19,10 @@ export default function Forget() {
         email: email.current.value,
       })
       .then(() => {
-        makeToast("success", "Acesse seu email para mais informações!");
+        makeToast(
+          "success",
+          "Verifique seu e-mail. Se encontrarmos seu cadastro na plataforma, você receberá instruções para redefinir sua senha."
+        );
         redirect("/reset");
       })
       .catch((error) => {
