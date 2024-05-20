@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { api } from "../api/api";
 import Header from "../components/header";
 import { User } from "../interfaces/User";
+import { redirect } from "../shared/redirect";
 import makeToast from "../shared/toaster";
 import homeStyles from "./home.module.css";
 import styles from "./styles.module.css";
@@ -22,9 +23,9 @@ export default function Home() {
           },
         }
       )
-      .then(() => {
+      .then((response) => {
         makeToast("success", "Ponto registrado com sucesso!");
-        window.location.reload();
+        setUser({ ...user, schedule: response.data });
       })
       .catch((error) => {
         if (

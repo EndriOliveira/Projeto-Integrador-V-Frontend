@@ -52,13 +52,6 @@ export default function UserForm({ user }: UserFormProps) {
       makeToast("error", "Preencha todos os campos!");
       return;
     }
-
-    if (body.department.trim().toLowerCase().includes("recursos humanos")) {
-      setBody({
-        ...body,
-        isHumanResources: true,
-      });
-    }
     delete body.hourBalance;
     api
       .post(
@@ -66,6 +59,10 @@ export default function UserForm({ user }: UserFormProps) {
         {
           ...body,
           birthDate: dayjs(body.birthDate).format("MM/DD/YYYY"),
+          isHumanResources: body.department
+            .trim()
+            .toLowerCase()
+            .includes("recursos humanos"),
         },
         {
           headers: {
@@ -109,21 +106,7 @@ export default function UserForm({ user }: UserFormProps) {
       makeToast("error", "Preencha todos os campos!");
       return;
     }
-
-    if (body.department.trim().toLowerCase().includes("recursos humanos")) {
-      setBody({
-        ...body,
-        isHumanResources: true,
-      });
-    } else {
-      setBody({
-        ...body,
-        isHumanResources: false,
-      });
-    }
-
     delete body.email;
-
     api
       .put(
         `/user/${user.id}`,
@@ -131,6 +114,10 @@ export default function UserForm({ user }: UserFormProps) {
           ...body,
           birthDate: dayjs(body.birthDate).format("MM/DD/YYYY"),
           hourBalance: Number(body.hourBalance),
+          isHumanResources: body.department
+            .trim()
+            .toLowerCase()
+            .includes("recursos humanos"),
         },
         {
           headers: {
